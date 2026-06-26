@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+.venv312/
+
+# Downloaded audio
+*.wav
+*.webm
+*.mp3
+
+# Demucs output
+separated/
+
+# Browser cookies
+cookies.txt
+
+# VS Code
+.vscode/
+
+# Temporary test files
+test.py      
