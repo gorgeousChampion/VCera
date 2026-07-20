@@ -1,4 +1,5 @@
 import os
+import numpy as np
 from extractor import extract_mfcc
 
 
@@ -13,7 +14,20 @@ def build_dataset():
             if song.endswith(".wav"):
                 song_path = os.path.join(artist_path, song)
                 print(f"Processing {artist}/{song}")
-                extract_mfcc(song_path)
+                vector = extract_mfcc(song_path)
+                
+                base = os.path.basename(song_path)
+                name, _ = os.path.splitext(base)
+
+                feature_folder = os.path.join("features", artist)
+
+                if not os.path.exists(feature_folder):
+                    os.makedirs(feature_folder)
+
+                feature_path = os.path.join(feature_folder, name)
+
+                np.save(feature_path, vector)
+
+                print(f"Saved {feature_path}.npy")
 
 build_dataset()
-os.listdir("dataset")

@@ -15,20 +15,5 @@ def extract_mfcc(song_path):
   
     features = np.concatenate((mfcc_mean, mfcc_std))
 
-    base=os.path.basename(song_path)
-    
-    artist = os.path.basename(os.path.dirname(song_path))
-    
-    feature_folder = os.path.join("features", artist)
-    if not os.path.exists(feature_folder):
-        os.makedirs(feature_folder)
-    
-    name,_=os.path.splitext(base)
-    
-    feature_path=os.path.join(feature_folder,name)
-    
-    np.save(feature_path,features)
-    
-    print(f"Saved features to {feature_path}.npy")
     return features
 
