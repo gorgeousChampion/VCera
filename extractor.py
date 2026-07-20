@@ -17,7 +17,7 @@ def extract_mfcc(song_path):
 
     base=os.path.basename(song_path)
     
-    artist = os.path.dirname(song_path)
+    artist = os.path.basename(os.path.dirname(song_path))
     
     feature_folder = os.path.join("features", artist)
     if not os.path.exists(feature_folder):
