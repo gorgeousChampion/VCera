@@ -1,0 +1,9 @@
+experiment_id,input,expected_artist,top1_prediction,expected_rank,top1_score,expected_artist_score,notes
+E0,WILDFLOWER isolated vocals,Billie Eilish,Sid Sriram,2,0.9916898,0.98912466,"Raw MFCC baseline; cosine similarity; Demucs run on already isolated vocals"
+E1,WILDFLOWER isolated vocals,Billie Eilish,Billie Eilish,1,0.609717,0.609717,"StandardScaler fitted on individual training-song MFCC vectors; shared scaler applied to user recording"
+E0,Maruvarthai,Sid Sriram,Sid Sriram,1,0.987351,0.987351,"Raw MFCC"
+E1,Maruvarthai,Sid Sriram,Michael Jackson,2,0.318447,0.239736,"Standardized MFCC"
+E0,Self Control,Frank Ocean,Adele,3,0.988079,0.984391,"Raw MFCC"
+E1,Self Control,Frank Ocean,Adele,2,0.393335,0.194480,"Standardized MFCC"
+E0,Valerie,Amy Winehouse,Amy Winehouse,1,0.995415,0.995415,"Raw MFCC"
+E1,Valerie,Amy Winehouse,Michael Jackson,2,0.540461,0.401822,"Standardized MFCC"

@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from extractor import extract_mfcc
+from processing.extractor import extract_mfcc
 
 
 def build_dataset():

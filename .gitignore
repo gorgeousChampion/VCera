@@ -22,3 +22,8 @@ cookies.txt
 
 # Temporary test files
 test.py      
+
+# Generated feature databases and fitted models
+features/
+features_standardized/
+models/

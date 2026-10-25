@@ -1,80 +1,44 @@
+
 import os
-import subprocess
 import sys
-import shutil
+import joblib
+import numpy as np
 
-artist = input("Artist: ")
+from user import get_user_vector
+from matcher import match_artists
 
-if not os.path.exists(artist):
-    os.mkdir(artist)
 
-urls = input("URLs: ").split()
-demucs_ip=input("Run Demucs? Yes or No:-")
+audio_path = input("Input a user song file: ").strip().strip('"')
 
-def download_song(artist, url, filename):
-    command = [
-    sys.executable, 
-    "-m",
-    "yt_dlp",
-    "--cookies", "cookies.txt",
-    "--js-runtimes", "node",
-    "--remote-components", "ejs:github",
-    "-x",
-    "--audio-format", "wav",
-    "-o", f"{artist}/{filename}",
-    url
-    ]
+if not os.path.isfile(audio_path):
+    print("Invalid audio path")
+    sys.exit(1)
 
-    try:
-        subprocess.run(command, check=True)
-        print("Download complete")
-        return f"{artist}/{filename}"
-    except subprocess.CalledProcessError as e:
-        print("Failed:", e)
-        return None
-artist_name = artist.lower().replace(" ", "_")
+user_vector = get_user_vector(audio_path)
 
-def separate_song(song_path):
-        command=[
-            sys.executable,
-            "-m",
-            "demucs.separate",
-            song_path,
-        ]
-        
-        try:
-            subprocess.run(command, check=True)
-            print("Separation complete")
-        except subprocess.CalledProcessError as e:
-            print("Failed:", e)
+if user_vector is None:
+    print("Audio processing failed")
+    sys.exit(1)
 
-def get_song_number(artist):
-    files = os.listdir(artist)
-    count = 0   
-    for file in files:
-        if file.endswith(".wav"):
-            count+=1
-    return count
+# E0: Original MFCC features.
+baseline_results = match_artists(user_vector, feature_dir="features")
 
-def process_vocals(song_path):
-    base=os.path.basename(song_path)
-    name,_=os.path.splitext(base)
-    vocals_path=os.path.join("separated","htdemucs",name,"vocals.wav")
-    if not os.path.exists(vocals_path):
-        print("vocals not found!")
-        return 
-    os.remove(song_path)
-    shutil.move(vocals_path,song_path)
-    song_folder=os.path.join("separated","htdemucs",name)
-    shutil.rmtree(song_folder)
+# E1: Apply the TRAINING scaler to the same user vector.
+scaler = joblib.load("models/scaler.joblib")
 
-for i, url in enumerate(urls):
-    print(f"Downloading {i+1}/{len(urls)}")
-    count = get_song_number(artist)
-    filename = f"{artist_name}_{count+1:03d}.wav"
-    print(filename)
-    song_path= download_song(artist,url,filename)
-    if song_path is not None :
-        if demucs_ip=="Yes":
-            separate_song(song_path)
-            process_vocals(song_path)
+standardized_vector = scaler.transform(
+    np.asarray(user_vector).reshape(1, -1)
+)[0]
+
+standardized_results = match_artists(
+    standardized_vector,
+    feature_dir="features_standardized"
+)
+
+print("\n=== E0: ORIGINAL MFCC ===")
+for rank, (artist, score) in enumerate(baseline_results, start=1):
+    print(f"{rank}. {artist}: {float(score):.6f}")
+
+print("\n=== E1: STANDARDIZED MFCC ===")
+for rank, (artist, score) in enumerate(standardized_results, start=1):
+    print(f"{rank}. {artist}: {float(score):.6f}")
