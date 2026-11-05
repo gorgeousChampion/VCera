@@ -27,3 +27,7 @@ test.py
 features/
 features_standardized/
 models/
+
+features_ecapa/
+features_ecapa_vad/
+pretrained_models/

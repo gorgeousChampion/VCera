@@ -1,0 +1,159 @@
+{
+    "input_file": "C:\\Users\\shrey\\OneDrive\\Desktop\\VCera\\Amy Winehouse - Valerie Acoustic Live Best Quality-[AudioTrimmer.com].mp3",
+    "processed_audio": "C:\\Users\\shrey\\OneDrive\\Desktop\\VCera\\comparison_outputs\\htdemucs\\Amy Winehouse - Valerie Acoustic Live Best Quality-[AudioTrimmer.com]\\vocals.wav",
+    "demucs_skipped": false,
+    "timestamp": "2026-10-25T20:51:54.063936",
+    "pipeline_seconds": 8.327,
+    "results": [
+        {
+            "method": "E0 - Raw MFCC",
+            "prediction": "amy winehouse",
+            "top_score": 0.9952812194824219,
+            "matching_seconds": 0.003,
+            "rankings": [
+                {
+                    "rank": 1,
+                    "artist": "amy winehouse",
+                    "similarity": 0.9952812194824219
+                },
+                {
+                    "rank": 2,
+                    "artist": "frank ocean",
+                    "similarity": 0.9937258958816528
+                },
+                {
+                    "rank": 3,
+                    "artist": "frank sinatra",
+                    "similarity": 0.9933841228485107
+                },
+                {
+                    "rank": 4,
+                    "artist": "adele",
+                    "similarity": 0.9915897250175476
+                },
+                {
+                    "rank": 5,
+                    "artist": "michael jackson",
+                    "similarity": 0.990487813949585
+                },
+                {
+                    "rank": 6,
+                    "artist": "billie eilish",
+                    "similarity": 0.9824846982955933
+                },
+                {
+                    "rank": 7,
+                    "artist": "shreya ghoshal",
+                    "similarity": 0.9725654125213623
+                },
+                {
+                    "rank": 8,
+                    "artist": "sid sriram",
+                    "similarity": 0.9649243354797363
+                }
+            ],
+            "extraction_seconds": 1.512,
+            "total_seconds": 1.515
+        },
+        {
+            "method": "E1 - Standardized MFCC",
+            "prediction": "michael jackson",
+            "top_score": 0.5143522024154663,
+            "matching_seconds": 0.002,
+            "rankings": [
+                {
+                    "rank": 1,
+                    "artist": "michael jackson",
+                    "similarity": 0.5143522024154663
+                },
+                {
+                    "rank": 2,
+                    "artist": "amy winehouse",
+                    "similarity": 0.38027504086494446
+                },
+                {
+                    "rank": 3,
+                    "artist": "adele",
+                    "similarity": 0.05177665129303932
+                },
+                {
+                    "rank": 4,
+                    "artist": "frank sinatra",
+                    "similarity": 0.042069125920534134
+                },
+                {
+                    "rank": 5,
+                    "artist": "sid sriram",
+                    "similarity": -0.049247775226831436
+                },
+                {
+                    "rank": 6,
+                    "artist": "shreya ghoshal",
+                    "similarity": -0.07702010124921799
+                },
+                {
+                    "rank": 7,
+                    "artist": "frank ocean",
+                    "similarity": -0.18520207703113556
+                },
+                {
+                    "rank": 8,
+                    "artist": "billie eilish",
+                    "similarity": -0.43238240480422974
+                }
+            ],
+            "extraction_seconds": 1.512,
+            "total_seconds": 1.514
+        },
+        {
+            "method": "E2 - ECAPA-TDNN",
+            "prediction": "amy winehouse",
+            "top_score": 0.8002975583076477,
+            "matching_seconds": 0.004,
+            "rankings": [
+                {
+                    "rank": 1,
+                    "artist": "amy winehouse",
+                    "similarity": 0.8002975583076477
+                },
+                {
+                    "rank": 2,
+                    "artist": "michael jackson",
+                    "similarity": 0.4534992277622223
+                },
+                {
+                    "rank": 3,
+                    "artist": "adele",
+                    "similarity": 0.39049533009529114
+                },
+                {
+                    "rank": 4,
+                    "artist": "sid sriram",
+                    "similarity": 0.2882060408592224
+                },
+                {
+                    "rank": 5,
+                    "artist": "shreya ghoshal",
+                    "similarity": 0.24240323901176453
+                },
+                {
+                    "rank": 6,
+                    "artist": "billie eilish",
+                    "similarity": 0.24203582108020782
+                },
+                {
+                    "rank": 7,
+                    "artist": "frank ocean",
+                    "similarity": 0.19543521106243134
+                },
+                {
+                    "rank": 8,
+                    "artist": "frank sinatra",
+                    "similarity": 0.17325247824192047
+                }
+            ],
+            "extraction_seconds": 0.755,
+            "total_seconds": 0.759
+        }
+    ]
+}

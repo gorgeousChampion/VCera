@@ -1,0 +1,159 @@
+{
+  "input_file": "Amy Winehouse - Valerie Acoustic Live Best Quality-[AudioTrimmer.com].mp3",
+  "processed_audio": "temporary Demucs vocals",
+  "demucs_skipped": false,
+  "timestamp": "2026-10-26T06:30:12",
+  "pipeline_seconds": 7.120394399971701,
+  "results": [
+    {
+      "method": "E0 - Raw MFCC",
+      "prediction": "amy winehouse",
+      "top_score": 0.9952632784843445,
+      "matching_seconds": 0.0017076999647542834,
+      "rankings": [
+        {
+          "rank": 1,
+          "artist": "amy winehouse",
+          "similarity": 0.9952632784843445
+        },
+        {
+          "rank": 2,
+          "artist": "frank ocean",
+          "similarity": 0.9937219023704529
+        },
+        {
+          "rank": 3,
+          "artist": "frank sinatra",
+          "similarity": 0.9933778047561646
+        },
+        {
+          "rank": 4,
+          "artist": "adele",
+          "similarity": 0.9915489554405212
+        },
+        {
+          "rank": 5,
+          "artist": "michael jackson",
+          "similarity": 0.9904860854148865
+        },
+        {
+          "rank": 6,
+          "artist": "billie eilish",
+          "similarity": 0.9824550151824951
+        },
+        {
+          "rank": 7,
+          "artist": "shreya ghoshal",
+          "similarity": 0.9725097417831421
+        },
+        {
+          "rank": 8,
+          "artist": "sid sriram",
+          "similarity": 0.964911162853241
+        }
+      ],
+      "extraction_seconds": 1.1468329000053927,
+      "total_seconds": 1.148540599970147
+    },
+    {
+      "method": "E1 - Standardized MFCC",
+      "prediction": "michael jackson",
+      "top_score": 0.5179441571235657,
+      "matching_seconds": 0.0015134999994188547,
+      "rankings": [
+        {
+          "rank": 1,
+          "artist": "michael jackson",
+          "similarity": 0.5179441571235657
+        },
+        {
+          "rank": 2,
+          "artist": "amy winehouse",
+          "similarity": 0.3784630298614502
+        },
+        {
+          "rank": 3,
+          "artist": "adele",
+          "similarity": 0.05048511549830437
+        },
+        {
+          "rank": 4,
+          "artist": "frank sinatra",
+          "similarity": 0.04309873282909393
+        },
+        {
+          "rank": 5,
+          "artist": "sid sriram",
+          "similarity": -0.04680093377828598
+        },
+        {
+          "rank": 6,
+          "artist": "shreya ghoshal",
+          "similarity": -0.07932169735431671
+        },
+        {
+          "rank": 7,
+          "artist": "frank ocean",
+          "similarity": -0.18335388600826263
+        },
+        {
+          "rank": 8,
+          "artist": "billie eilish",
+          "similarity": -0.43425068259239197
+        }
+      ],
+      "extraction_seconds": 1.2523159999400377,
+      "total_seconds": 1.2538294999394566
+    },
+    {
+      "method": "E2 - ECAPA",
+      "prediction": "amy winehouse",
+      "top_score": 0.8019207119941711,
+      "matching_seconds": 0.0020231999224051833,
+      "rankings": [
+        {
+          "rank": 1,
+          "artist": "amy winehouse",
+          "similarity": 0.8019207119941711
+        },
+        {
+          "rank": 2,
+          "artist": "michael jackson",
+          "similarity": 0.4546966254711151
+        },
+        {
+          "rank": 3,
+          "artist": "adele",
+          "similarity": 0.3924073874950409
+        },
+        {
+          "rank": 4,
+          "artist": "sid sriram",
+          "similarity": 0.2884819805622101
+        },
+        {
+          "rank": 5,
+          "artist": "shreya ghoshal",
+          "similarity": 0.24204859137535095
+        },
+        {
+          "rank": 6,
+          "artist": "billie eilish",
+          "similarity": 0.241608664393425
+        },
+        {
+          "rank": 7,
+          "artist": "frank ocean",
+          "similarity": 0.19486157596111298
+        },
+        {
+          "rank": 8,
+          "artist": "frank sinatra",
+          "similarity": 0.17453190684318542
+        }
+      ],
+      "extraction_seconds": 0.6021222999552265,
+      "total_seconds": 0.6041454998776317
+    }
+  ]
+}
